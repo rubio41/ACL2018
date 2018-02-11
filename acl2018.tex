@@ -31,14 +31,15 @@
 
 \title{Learning Personalized End-To-End Goal-Oriented Dialog}
 
-\author{Liangchen Luo \\
-  Peking University\\
-  {\tt luolc@pku.edu.cn} \\\And
-  Second Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  {\tt email@domain} \\}
+\author{
+    Liangchen Luo \\
+    Peking University, Beijing, China \\
+    {\tt luolc@pku.edu.cn} \\ 
+    \And
+    Wenhao Huang \\
+    Microsoft Research, Beijing, China \\
+    {\tt wenhhu@microsoft.com} \\
+}
 
 \date{}
 
@@ -61,16 +62,21 @@
 Considerable research efforts have been devoted so far to make conversational 
 agents smarter. 
 One of the approaches is integrating user/speaker model into dialog systems.
-In this way, an agent can choose the best response according to the 
-specific user preference 
-%\cite{}
-and use appropriate speech style based on profile or attributes of who 
-it is interacting with 
-\cite{Joshi2017PersonalizationIG}.
+In this way, an agent can learn abilities like: choosing the best response 
+according to the specific user preference \cite{DBLP:journals/corr/JoshiMF17};
+or using appropriate speech style based on profile or attributes of who 
+it is interacting with \cite{herzig-EtAl:2017:INLG2017}.
 
-A first and prominent attempt to model persona was by \newcite{li2016persona} 
-where the authors proposed to assign specific conversation style to agents
-based on learned persona embedding. 
+A first attempt to model persona is from \newcite{li-EtAl:2016:P16-13} , 
+who propose to assign specific personality and conversation style to agents 
+based on learned persona embeddings.
+Recent work by \newcite{ficler-goldberg:2017:StyVa} perform a conditional 
+language model to generate text with stylistic restrictions.
+\newcite{Qian2017AssigningPT} give the system an identity with profile
+in order to enhance the response consistency.
+Other researchers have recently attempted to introduce personalized information 
+to dialog system by transfer learning 
+\cite{Yang:2017:PRG:3077136.3080706, DBLP:journals/corr/ZhangLWZ17}.
 
 \section{Model}
 
