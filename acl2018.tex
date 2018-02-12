@@ -13,6 +13,8 @@
 
 \documentclass[11pt,a4paper]{article}
 \usepackage[hyperref]{acl2018}
+\usepackage{booktabs, multirow, multicol}
+\usepackage{tabularx}
 \usepackage{times}
 \usepackage{latexsym}
 
@@ -56,6 +58,47 @@
 \end{abstract}
 
 \section{Introduction}
+
+As conversational agents develop rapidly, there has been growing research interest in training dialog systems with end-to-end models \cite{DBLP:journals/corr/VinyalsL15, sordoni-EtAl:2015:NAACL-HLT, bordes2016learning, NIPS2015_MemN2N}, which are directly trained on past dialogs without assumption on the domain or dialog state structure.
+One major issue for these content-based systems is their propensity to select the response only relying on the content of conversation context, overlooking the differences among interlocutors.
+Therefore, existing models cannot change speech style or response strategy flexibly when facing different kinds of users, as illustrated in Table~\ref{intro:example}.
+
+\begin{table}[t]
+	\centering
+	\small
+	\label{intro:example}
+	\begin{tabularx}{\linewidth}{rX}
+		\toprule
+		\textbf{user info} & \textbf{gender: female, age: young} \\
+		\cmidrule{1-2}
+		message & Good morning. \\
+		response 1 & Hello, what can I help you with today? \\
+		response 2 & Hey girl! How is it going? \\
+		
+		\midrule
+		\textbf{user info} & \textbf{gender: male, age: elderly} \\
+		\cmidrule{1-2}
+		message & Good morning. \\
+		response 1 & Hello, what can I help you with today? \\
+		response 2 & Greetings sir. What may I assist you with today? \\
+		
+		\midrule
+		\textbf{user info} & \textbf{dietary: vegetable} \\
+		\cmidrule{1-2}
+		message & Can you make a restaurant reservation in a cheap price range in London for two with Spanish food? \\
+		candidates & 1. london\_cheap\_spanish\_1 R\_type non-veg \\
+		           & 2. london\_cheap\_spanish\_2 R\_type veg \\
+		response 1 & How about this: london\_cheap\_spanish\_1? \\
+		response 2 & How about this: london\_cheap\_spanish\_2? \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Citation commands supported by the style file.
+		The citation style is based on the natbib package and
+		supports all natbib citation commands.
+		It also supports commands defined in previous ACL style files
+		for compatibility.
+	}
+\end{table}
 
 \section{Related Work}
 
