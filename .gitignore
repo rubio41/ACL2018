@@ -3,6 +3,5 @@
 *.blg
 *.log
 *.out
-*.pdf
 *.gz
 ._*.bib
